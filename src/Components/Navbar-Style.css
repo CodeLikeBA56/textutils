@@ -1,0 +1,159 @@
+.Navbar{
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    line-height: 60px;
+    color: var(--light-text);
+    background-color: var(--primary-color);
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.Navbar-light{
+    background-color: var(--primary-color);
+}
+.Navbar-dark{
+    background-color: var(--dark-background);
+}
+nav .website-name{
+    font-size: 30px;
+    text-decoration: none;
+    font-family: monospace;
+    color: var(--dark-text);
+}
+nav .Collapse{
+    width: auto;
+    line-height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+nav .Collapse ul{
+    width: auto;
+    display: flex;
+    gap: 15px;
+}
+nav .Collapse ul li.nav-item{
+    list-style: none;
+    width: auto;
+    height: 60px;
+}
+nav ul li.nav-item a.active, nav ul li.nav-item a.nav-Link:hover{
+    border-bottom: 3px solid #fff;
+}
+nav ul li.nav-item .nav-Link{
+    color: #FFFFFF;
+    font-size: large;
+    font-weight: 500;
+    padding: 7px 10px;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+nav .item{
+    line-height: 60px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    margin-left: 20px;
+}
+nav .item input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    display: none;
+}
+nav .item label{
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ebebeb;
+    border-radius: 50px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 1s;
+}
+nav .item label::after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 18px;
+    left: 4px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 1s;
+}
+nav .item label span{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 21.5px;
+    left: 7.5px;
+    border-radius: 50px;
+    z-index: 100;
+    transition: 1s;
+}
+nav .item label #lightmode-toggle{
+    color: white;
+    font-size: large;
+}
+nav .item input:checked + label{
+    background: #242424;
+}
+nav .item input:checked + label::after{
+    left: 66px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+nav .item input:checked + label span{
+    top: 20.5px;
+    left: 65px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+nav #navbar-toggler{
+    display: none;
+    width: auto;
+    line-height: 60px;
+    color: var(--dark-text);
+    font-size: 40px;
+}
+
+@media (max-width: 975px) {
+    nav #navbar-toggler{
+        display: flex;
+        position: relative;
+        right: 10px;
+        cursor: pointer;
+    }
+    nav .Collapse{
+        height: 100vh;
+        width: 25%;
+        position: fixed;
+        top: -100%;
+        right: -100%;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        transition: 1s all;
+    }
+    nav .navbar-collapse-light{
+        background-color: var(--primary-color);
+    }
+    nav .navbar-collapse-dark{
+        background-color: var(--dark-background);
+    }
+    nav .Collapse ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav .item{
+        right:  33px;
+    }
+}
